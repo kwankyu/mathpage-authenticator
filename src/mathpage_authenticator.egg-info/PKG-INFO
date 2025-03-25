@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: mathpage_authenticator
-Version: 0.1
+Version: 1.0
 Summary: Authentication by MathPage
 Author-email: Kwankyu Lee <ekwankyu@gmail.com>
 Requires-Dist: jupyterhub
