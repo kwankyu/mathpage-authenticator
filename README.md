@@ -1,9 +1,8 @@
 # MathPage Authenticator
 
 MathPage Authenticator is a **custom JupyterHub authenticator** designed to
-work with [ingang.mathpage.dev](https://ingang.mathpage.dev), an online lecture
-learning system. It enables secure authentication for JupyterHub users based on
-MathPage credentials.
+work with [ingang.mathpage.dev](https://ingang.mathpage.dev). It enables secure
+authentication for JupyterHub users based on MathPage credentials.
 
 ## Features
 
@@ -37,14 +36,14 @@ c.LocalAuthenticator.create_system_users = True
 c.Spawner.cmd = ['<PATH_TO_JUPYTERHUB_SINGLEUSER>']
 ```
 
-where `<PATH_TO_JUPYTERHUB_SINGLEUSER>` should be what you get from
+where `<PATH_TO_JUPYTERHUB_SINGLEUSER>` is what you get from the command
 
 ```bash
 $ which jupyterhub-singleuser
 /usr/local/venv/bin/jupyterhub-singleuser
 ```
 
-and `<MATHPAGE_ACCESS_TOKEN>` is obtained from [ingang.mathpage.dev](https://ingang.mathpage.dev) by request.
+and `<MATHPAGE_ACCESS_TOKEN>` is obtained by request from [ingang.mathpage.dev](https://ingang.mathpage.dev).
 
 ## License
 
