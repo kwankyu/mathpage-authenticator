@@ -15,12 +15,12 @@ authentication for JupyterHub users based on MathPage credentials.
 To install `mathpage_authenticator`, run:
 
 ```sh
-pip install git+https://github.com/kwankyu/mathpage_authenticator.git
+pip install git+https://github.com/kwankyu/mathpage-authenticator.git
 ```
 
 ## Usage
 
-Configure your install of JupyterHub. Modify your `jupyterhub_config.py` to use `mathpage_authenticator`:
+Configure your install of JupyterHub. Modify your `jupyterhub_config.py` to use mathpage-authenticator:
 
 ```python
 from mathpage_authenticator import LocalMathPageAuthenticator
