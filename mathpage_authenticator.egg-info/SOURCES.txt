@@ -1,0 +1,7 @@
+pyproject.toml
+mathpage_authenticator/__init__.py
+mathpage_authenticator.egg-info/PKG-INFO
+mathpage_authenticator.egg-info/SOURCES.txt
+mathpage_authenticator.egg-info/dependency_links.txt
+mathpage_authenticator.egg-info/requires.txt
+mathpage_authenticator.egg-info/top_level.txt

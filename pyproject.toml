@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mathpage_authenticator"
+description = "Authentication by MathPage"
+version = "1.0"
+authors = [
+  { name="Kwankyu Lee", email="ekwankyu@gmail.com" },
+]
+dependencies = [
+    "jupyterhub",
+]
