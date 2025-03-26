@@ -27,8 +27,11 @@ from mathpage_authenticator import LocalMathPageAuthenticator
 c.JupyterHub.authenticator_class = LocalMathPageAuthenticator
 c.LocalMathPageAuthenticator.auth_url = 'https://ingang.mathpage.dev/system/api/learner/check'
 c.LocalMathPageAuthenticator.auth_api_access_token = '<MATHPAGE_ACCESS_TOKEN>'
+c.LocalMathPageAuthenticator.auth_allowed_users = ['admin','<USER1>','<USER2>',...]
+c.LocalMathPageAuthenticator.admin_users = {'admin'}
 c.LocalMathPageAuthenticator.auto_login = False
 c.LocalMathPageAuthenticator.enable_auth_state = True
+c.LocalMathPageAuthenticator.allow_all = True
 c.LocalMathPageAuthenticator.create_system_users = True
 c.Spawner.cmd = ['<PATH_TO_JUPYTERHUB_SINGLEUSER>']
 ```
