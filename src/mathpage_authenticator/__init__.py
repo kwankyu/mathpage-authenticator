@@ -12,7 +12,7 @@ from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 
 from jupyterhub.auth import Authenticator, LocalAuthenticator
 
-from traitlets import Unicode, Dict
+from traitlets import Unicode, List
 
 class MathPageAuthenticator(Authenticator):
 
@@ -28,6 +28,12 @@ class MathPageAuthenticator(Authenticator):
         help='MathPage authentication api access token',
     )
 
+    auth_allowed_users = List(
+        os.environ.get('MATHPAGE_AUTH_ALLOWED_USERS', ''),
+        config=True,
+        help='Mathpage users allowed for authentication',
+    )
+
     async def authenticate(self, handler, data=None):
         http_client = AsyncHTTPClient()
 
@@ -36,13 +42,18 @@ class MathPageAuthenticator(Authenticator):
             password=data['password'],
         )
 
+        for name in self.auth_allowed_users:
+            if params['username'] == name or params['username'].endswith('@' + name):
+                break
+        else:
+            self.log.error("Disallowed user %s", data['username'])
+            return # None to fail
+
         headers = {
             "Accept": "application/json",
             "User-Agent": "JupyterHub",
             "Authorization": "Token " + self.auth_api_access_token,
         }
-
-        print(self.auth_url, headers)
 
         req = HTTPRequest(self.auth_url,
                           method="POST",
@@ -56,7 +67,7 @@ class MathPageAuthenticator(Authenticator):
         username = user_data['username']
         if not username: # empty string for unauthenticated user
             self.log.error("Invalid user name or password %s", data['username'])
-            return
+            return # None to fail
 
         auth_state = {
             'active_author': False,
