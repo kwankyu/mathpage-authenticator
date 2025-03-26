@@ -4,12 +4,6 @@ MathPage Authenticator is a **custom JupyterHub authenticator** designed to
 work with [https://ingang.mathpage.dev](https://ingang.mathpage.dev). It enables secure
 authentication for JupyterHub users based on MathPage credentials.
 
-## Features
-
-- Integrates JupyterHub authentication with **ingang.mathpage.dev**.
-- Provides a seamless login experience for students and instructors.
-- Designed for easy deployment and configuration.
-
 ## Installation
 
 To install `mathpage_authenticator`, run:
