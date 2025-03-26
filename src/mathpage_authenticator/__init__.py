@@ -29,7 +29,7 @@ class MathPageAuthenticator(Authenticator):
     )
 
     auth_allowed_users = List(
-        os.environ.get('MATHPAGE_AUTH_ALLOWED_USERS', ''),
+        default_value=[],
         config=True,
         help='Mathpage users allowed for authentication',
     )
