@@ -47,8 +47,8 @@ and `<MATHPAGE_ACCESS_TOKEN>` is obtained by request from
 [https://ingang.mathpage.dev](https://ingang.mathpage.dev).
 
 The `LocalMathPageAuthenticator` authenticator checks login credentials only
-for users in `auth_allowed_users`. For example, if `<USER1>` is "alice", then
-users with username "alice" or username ending in "@alice" are checked.
+for users in `auth_allowed_users`. For example, if `<USER1>` is `alice`, then
+users with username `alice` or usernames ending in `@alice` are checked.
 
 ## License
 
